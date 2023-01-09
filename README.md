@@ -159,13 +159,13 @@ The color palette is based on Microsoft's [Fluent UI Theme Designer](https://www
 
 `Button`, `Text Input`, `Pen Input`, `Dropdown`, `Combobox`, `Date Picker`, `Listbox`, `Checkbox`, `Radio`, `Toggle`, `Slider`, `Rating`, `Timer`, `Forms (Edit/View)`, `Rich Text Editor`, `Label`, `HTML Text`, `Forms Pro survey`, `Data Table`, `Gallery`, `Image`, `Camera`, `Barcode Scanner`, `Video`, `Microsoft Stream`, `Audio`, `Microphone`, `Add Picture`, `Import`, `Export`, `PDF Viewer`, `All Shapes`, `All Charts`.
 
-All mentioned controls in the `theme.json` file are based on the `appTheme.palette` variable defined in the app.  
+All mentioned controls in the [`theme.json`](https://github.com/msc365/powerapps-starterkit/blob/621dd43c8d60a6350259e96b586326b1700e2640/starterkit/core/SolutionPackage/CanvasApps/msc365_PowerCanvasTemplate_src/Src/Themes.json) file are based on the `appTheme.palette` variable defined in the app `OnStart`, which is linked to the default `Blue standard` theme.  
 
 > **Note**: Removing or modifying (not maintaining the same structure) of `appTheme.palette` variable will generate function level errors.
 
 ## Prerequisites
 
-- n/a
+- `Blue standard` theme must be selected.
 
 ## Data Sources
 
