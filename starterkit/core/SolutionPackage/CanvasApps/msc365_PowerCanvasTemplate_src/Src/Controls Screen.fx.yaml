@@ -619,7 +619,7 @@
                         "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 " & 2048 & " 2048'>
                             <g transform='matrix(1 0 0 -1 0 2048),rotate(0, 2048,1024)'>
                                 <path 
-                                    fill='" & If(IsBlank(ColorHex),IconSVG_1.Theme.palette.themePrimary, ColorHex) & "'
+                                    fill='" & If(IsBlank(ColorHex),IconSVG.Theme.palette.themePrimary, ColorHex) & "'
                                     d='" & IconSVG.GetIconPath(IconName) & "' />
                             </g>
                         </svg>"
@@ -23352,9 +23352,6 @@
         ZIndex: =2
 
     cmp_Dialog_CS As Dialog:
-        ContentHeight: =cmp_Dialog_CS.DialogHeight-con_Dialog_Center.PaddingTop-con_Dialog_Center.PaddingBottom-con_Dialog_Header.Height-gal_Dialog_Buttons.Height
-        ContentX: = (cmp_Dialog_CS.Width-cmp_Dialog_CS.DialogWidth)/2
-        ContentY: =(cmp_Dialog_CS.Height-cmp_Dialog_CS.DialogHeight)/2+lbl_Dialog_Title.Height
         Fill: =cmp_Dialog_CS.OverlayColor
         OnSelectButton: |-
             =UpdateContext({showDialog:false})

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>msc365_PowerCanvasTemplate</Name>
-  <AppVersion>2022-07-13T10:14:41Z</AppVersion>
+  <AppVersion>2023-01-09T08:51:58Z</AppVersion>
   <Status>Ready</Status>
-  <CreatedByClientVersion>3.22064.10.0</CreatedByClientVersion>
-  <MinClientVersion>3.22064.10.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22064.10","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20220713T095137Z-3.22064.10.0"}</Tags>
+  <CreatedByClientVersion>3.22122.15.0</CreatedByClientVersion>
+  <MinClientVersion>3.22122.15.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22122.15","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20220713T101441Z-3.22064.10.0"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(27, 121, 176, 1)</BackgroundColor>
-  <DisplayName>Power Canvas Template</DisplayName>
+  <DisplayName>MSC365 - Canvas Template</DisplayName>
   <Description xsi:nil="true"></Description>
-  <CommitMessage>Release v1.0.220714.0-RC</CommitMessage>
+  <CommitMessage xsi:nil="true"></CommitMessage>
   <Publisher></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
   <ConnectionReferences>{}</ConnectionReferences>

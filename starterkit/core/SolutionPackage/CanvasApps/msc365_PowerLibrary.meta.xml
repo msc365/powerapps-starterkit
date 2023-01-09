@@ -5,11 +5,11 @@
   <Status>Ready</Status>
   <CreatedByClientVersion>3.22064.10.0</CreatedByClientVersion>
   <MinClientVersion>3.22064.10.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"280","primaryDeviceHeight":"320","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.22064.10","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false","sienaVersion":"20220713T092304Z-3.22064.10.0"}</Tags>
+  <Tags>{"primaryDeviceWidth":"280","primaryDeviceHeight":"320","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.22064.10","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false","sienaVersion":"20220713T101235Z-3.22064.10.0"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(238, 82, 9, 1)</BackgroundColor>
-  <DisplayName>Power Library</DisplayName>
+  <DisplayName>MSC365 - Power Library</DisplayName>
   <Description xsi:nil="true"></Description>
   <CommitMessage>Release v1.0.220724-RC</CommitMessage>
   <Publisher></Publisher>

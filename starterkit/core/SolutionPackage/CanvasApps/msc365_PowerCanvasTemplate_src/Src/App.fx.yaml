@@ -4,11 +4,11 @@ App As appinfo:
         =/* Published version */
         Set(
             Version,
-            "v1.0.220714.0"
+            "v1.0.230109.0-rc"
         );
         Set(
             Author,
-            "Provided by MSCollab365"
+            "Provided by MSCollab365, Martin Swinkels"
         );
         /* Set debugMode */
         Switch(
