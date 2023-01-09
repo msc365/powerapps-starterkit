@@ -1,0 +1,147 @@
+SearchBox As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =34
+    OnSelect: =true
+    Placeholder: ="Search"
+    SearchText: =txt_SearchBox_Text.Text
+    Theme: |-
+        ={
+            palette: {
+                themePrimary: "#1b79b0",
+                themeLighterAlt: "#f3f9fc",
+                themeLighter: "#d1e6f2",
+                themeLight: "#acd2e7",
+                themeTertiary: "#66a9d0",
+                themeSecondary: "#2f87b9",
+                themeDarkAlt: "#186d9e",
+                themeDark: "#145c86",
+                themeDarker: "#0f4463",
+                neutralLighterAlt: "#faf9f8",
+                neutralLighter: "#f3f2f1",
+                neutralLight: "#edebe9",
+                neutralQuaternaryAlt: "#e1dfdd",
+                neutralQuaternary: "#d0d0d0",
+                neutralTertiaryAlt: "#c8c6c4",
+                neutralTertiary: "#a19f9d",
+                neutralSecondary: "#605e5c",
+                neutralPrimaryAlt: "#3b3a39",
+                neutralPrimary: "#323130",
+                neutralDark: "#201f1e",
+                black: "#000000",
+                white: "#ffffff"
+            },
+            borders: {
+                input:{
+                    style: "Solid",
+                    thickness: 1,
+                    focusedThickness: 1,
+                    radius: 0
+                },
+                button:{
+                    style: "Solid",
+                    thickness: 0,
+                    focusedThickness: 0,
+                    radius: 0
+                }
+            },
+            fonts: {
+                default: "'Segoe UI', 'Open Sans', sans-serif",
+                size: {
+                    xs: 9,
+                    s: 10.5,
+                    m: 12,
+                    l: 16,
+                    xl: 20
+                },
+                headings: {
+                    h1: 24,
+                    h2: 20,
+                    h3: 14,
+                    h4: 12
+                }
+            }
+        }
+    Width: =242
+    X: =0
+    Y: =0
+    ZIndex: =8
+
+    txt_SearchBox_Text As text:
+        BorderColor: =ColorValue(SearchBox.Theme.palette.neutralTertiary)
+        BorderThickness: =SearchBox.Theme.borders.input.thickness
+        Color: =ColorValue(SearchBox.Theme.palette.neutralPrimary)
+        Default: =""
+        DisabledBorderColor: =ColorValue(SearchBox.Theme.palette.neutralTertiary)
+        DisabledColor: =ColorValue(SearchBox.Theme.palette.neutralTertiary)
+        DisabledFill: =ColorValue(SearchBox.Theme.palette.neutralLighter)
+        Fill: =ColorValue(SearchBox.Theme.palette.white)
+        FocusedBorderThickness: =SearchBox.Theme.borders.input.focusedThickness
+        Font: =SearchBox.Theme.fonts.default
+        Height: =SearchBox.Height-3
+        HintText: =SearchBox.Placeholder
+        HoverBorderColor: =ColorValue(SearchBox.Theme.palette.neutralTertiary)
+        HoverColor: =ColorValue(SearchBox.Theme.palette.neutralPrimary)
+        HoverFill: =ColorValue(SearchBox.Theme.palette.neutralLighterAlt)
+        PaddingBottom: =4
+        PaddingLeft: =40
+        PaddingRight: =4
+        PaddingTop: =4
+        RadiusBottomLeft: =SearchBox.Theme.borders.input.radius
+        RadiusBottomRight: =SearchBox.Theme.borders.input.radius
+        RadiusTopLeft: =SearchBox.Theme.borders.input.radius
+        RadiusTopRight: =SearchBox.Theme.borders.input.radius
+        Size: =SearchBox.Theme.fonts.size.s
+        Tooltip: =SearchBox.Placeholder
+        Width: =SearchBox.Width-3
+        X: =1
+        Y: =1
+        ZIndex: =1
+
+    img_SearchBox As image:
+        Height: =Parent.Height-3
+        Image: |-
+            ="data:image/svg+xml," & EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='0 0 2048 2048'>
+                    <g transform='matrix(1 0 0 -1 0 2048),rotate(0, 1024, 1024)'>
+                        <path 
+                            fill='" & SearchBox.Theme.palette.themePrimary & "'
+                            d='M1344 2048q97 0 187 -25t168 -71t142.5 -110.5t110.5 -142.5t71 -168t25 -187t-25 -187t-71 -168t-110.5 -142.5t-142.5 -110.5t-168 -71t-187 -25q-125 0 -239.5 42t-210.5 121l-785 -784q-19 -19 -45 -19t-45 19t-19 45t19 45l784 785q-79 96 -121 210.5t-42 239.5q0 97 25 187t71 168t110.5 142.5t142.5 110.5t168 71t187 25zM1344 768q119 0 224 45.5t183 123.5t123.5 183t45.5 224t-45.5 224t-123.5 183t-183 123.5t-224 45.5t-224 -45.5t-183 -123.5t-123.5 -183t-45.5 -224t45.5 -224t123.5 -183t183 -123.5t224 -45.5z' />
+                    </g>
+                </svg>"
+            )
+        OnSelect: =SearchBox.OnSelect()
+        PaddingBottom: =6
+        PaddingLeft: =6
+        PaddingRight: =6
+        PaddingTop: =6
+        Width: =Self.Height
+        X: =1
+        Y: =1
+        ZIndex: =2
+
+    btn_SearchBox As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
+        Height: =Parent.Height-3
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        OnSelect: =SearchBox.OnSelect()
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =10.5
+        Text: =""
+        Width: =Self.Height
+        X: =1
+        Y: =1
+        ZIndex: =3
+

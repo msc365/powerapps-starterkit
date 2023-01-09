@@ -1,0 +1,284 @@
+Dialog As CanvasComponent:
+    Buttons: |-
+        =Table(
+            {
+                Label: "Cancel",
+                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Standard
+            },
+                {
+                Label: "OK",
+                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Primary
+            }
+        )
+    ContentHeight: =Dialog.DialogHeight-con_Dialog_Center.PaddingTop-con_Dialog_Center.PaddingBottom-con_Dialog_Header.Height-gal_Dialog_Buttons.Height
+    ContentWidth: =100
+    ContentX: = (Dialog.Width-Dialog.DialogWidth)/2
+    ContentY: =(Dialog.Height-Dialog.DialogHeight)/2+lbl_Dialog_Title.Height
+    DialogBorderRadius: =4
+    DialogHeight: =400
+    DialogWidth: =640
+    Fill: =Dialog.OverlayColor
+    Height: =768
+    OnSelectButton: =
+    OnSelectClose: =true
+    OverlayColor: =RGBA(0, 0, 0, 0.2)
+    Selected: |-
+        ={Label: gal_Dialog_Buttons.Selected.Label}
+    Subtitle: ="Content goes here."
+    Theme: |-
+        ={
+            palette: {
+                themePrimary: "#1b79b0",
+                themeLighterAlt: "#f3f9fc",
+                themeLighter: "#d1e6f2",
+                themeLight: "#acd2e7",
+                themeTertiary: "#66a9d0",
+                themeSecondary: "#2f87b9",
+                themeDarkAlt: "#186d9e",
+                themeDark: "#145c86",
+                themeDarker: "#0f4463",
+                neutralLighterAlt: "#faf9f8",
+                neutralLighter: "#f3f2f1",
+                neutralLight: "#edebe9",
+                neutralQuaternaryAlt: "#e1dfdd",
+                neutralQuaternary: "#d0d0d0",
+                neutralTertiaryAlt: "#c8c6c4",
+                neutralTertiary: "#a19f9d",
+                neutralSecondary: "#605e5c",
+                neutralPrimaryAlt: "#3b3a39",
+                neutralPrimary: "#323130",
+                neutralDark: "#201f1e",
+                black: "#000000",
+                white: "#ffffff"
+            },
+            borders: {
+                input:{
+                    style: "Solid",
+                    thickness: 1,
+                    focusedThickness: 1,
+                    radius: 0
+                },
+                button:{
+                    style: "Solid",
+                    thickness: 0,
+                    focusedThickness: 0,
+                    radius: 0
+                }
+            },
+            fonts: {
+                default: "'Segoe UI', 'Open Sans', sans-serif",
+                size: {
+                    xs: 9,
+                    s: 10.5,
+                    m: 12,
+                    l: 16,
+                    xl: 20
+                },
+                headings: {
+                    h1: 24,
+                    h2: 20,
+                    h3: 14,
+                    h4: 12
+                }
+            }
+        }
+    Title: ="Title"
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =5
+
+    htm_Dialog_Shadow As htmlViewer:
+        Font: =Font.'Segoe UI'
+        Height: =Parent.Height
+        HtmlText: |-
+            ="<div style=' transform: translate(-50%, -50%);
+                position:absolute; top:50%; left:50%; margin:auto; padding:0;
+                box-shadow:rgba(0, 0, 0, 0.22) 0px 25.6px 57.6px 0px, rgba(0, 0, 0, 0.18) 0px 4.8px 14.4px 0px;
+                border-radius:"& Dialog.DialogBorderRadius &"px;
+                background-color:"& Dialog.Theme.palette.white &";
+                width:"& Dialog.DialogWidth &"px;
+                height:"& Dialog.DialogHeight  &"px'>
+            </div>"
+        Width: =Parent.Width
+        ZIndex: =1
+
+    con_Dialog_Root As groupContainer.horizontalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =2
+
+        con_Dialog_Top As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: =225
+            LayoutMinHeight: =0
+            LayoutMinWidth: =250
+            ZIndex: =1
+
+        con_Dialog_Middle As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =Dialog.DialogHeight
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutMinHeight: =112
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            con_Dialog_Left As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =225
+                LayoutMinHeight: =112
+                LayoutMinWidth: =0
+                ZIndex: =1
+
+            con_Dialog_Center As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =225
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =8
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =8
+                Width: =Dialog.DialogWidth
+                ZIndex: =2
+
+                con_Dialog_Header As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =64
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingRight: =16
+                    Width: =Dialog.DialogWidth-16
+                    ZIndex: =1
+
+                    lbl_Dialog_Title As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =ColorValue(Dialog.Theme.palette.neutralPrimary)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =ColorValue(Dialog.Theme.palette.neutralTertiary)
+                        FillPortions: =1
+                        FocusedBorderThickness: =4
+                        Font: =Dialog.Theme.fonts.default
+                        FontWeight: =FontWeight.Semibold
+                        Height: =64
+                        LayoutMinHeight: =40
+                        LayoutMinWidth: =100
+                        PaddingBottom: =0
+                        PaddingLeft: =16
+                        PaddingRight: =0.00
+                        PaddingTop: =16
+                        Size: =Dialog.Theme.fonts.size.l
+                        Text: =Dialog.Title
+                        Width: =0.00
+                        X: =0.00
+                        ZIndex: =1
+
+                    ico_Dialog_Cancel As icon.Cancel:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =Dialog.Theme.borders.input.style
+                        Color: =ColorValue(Dialog.Theme.palette.neutralPrimary)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =32
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(Self.Color, 30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Cancel
+                        LayoutMinHeight: =64
+                        LayoutMinWidth: =64
+                        OnSelect: =Dialog.OnSelectClose()
+                        PaddingBottom: =8
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =8
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =32
+                        X: =0.00
+                        ZIndex: =2
+
+                con_Dialog_Content As groupContainer.manualLayoutContainer:
+                    Height: =225
+                    LayoutMinWidth: =250
+                    ZIndex: =2
+
+                    lbl_Dialog_Subtitle As label:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        Color: =ColorValue(Dialog.Theme.palette.neutralPrimary)
+                        DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =Dialog.Theme.fonts.default
+                        Height: =Parent.Height
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =Dialog.Theme.fonts.size.s
+                        Text: =Dialog.Subtitle
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                gal_Dialog_Buttons As gallery.galleryHorizontal:
+                    AlignInContainer: =AlignInContainer.End
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    FillPortions: =0
+                    Height: =40
+                    Items: =Dialog.Buttons
+                    LayoutMinHeight: =40
+                    LayoutMinWidth: =320
+                    OnSelect: =Dialog.OnSelectButton()
+                    ShowScrollbar: =false
+                    TemplatePadding: =4
+                    TemplateSize: =96
+                    Width: =CountRows(gal_Dialog_Buttons.AllItems) * 88 + 16
+                    ZIndex: =3
+
+                    btn_Dialog_Action As Button:
+                        BorderRadius: =0
+                        ButtonType: =ThisItem.ButtonType
+                        DisplayMode: =DisplayMode.Edit
+                        FillColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.themePrimary),ColorValue(Dialog.Theme.palette.white))
+                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                        Height: =32
+                        HoverFillColor: =If(ThisItem.ButtonType = Primary, ColorFade(ColorValue(Dialog.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Dialog.Theme.palette.white),-5%))
+                        HoverTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
+                        OnSelect: =Select(Parent)
+                        PaddingTop: =0.00
+                        PressedFillColor: =If(ThisItem.ButtonType = Primary,ColorValue(Dialog.Theme.palette.themeDarkAlt),ColorValue(Dialog.Theme.palette.neutralLight))
+                        PressedTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
+                        Text: =ThisItem.Label
+                        TextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
+                        Width: =88
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+            con_Dialog_Right As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =225
+                LayoutMinHeight: =112
+                LayoutMinWidth: =0
+                ZIndex: =3
+
+        con_Dialog_Bottom As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: =225
+            LayoutMinHeight: =0
+            LayoutMinWidth: =250
+            ZIndex: =3
+

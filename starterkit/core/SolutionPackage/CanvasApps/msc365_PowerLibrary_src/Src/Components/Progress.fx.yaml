@@ -1,0 +1,74 @@
+Progress As CanvasComponent:
+    Color: =
+    Fill: =ColorValue(Progress.Theme.palette.neutralLight)
+    Height: =2
+    Theme: |-
+        ={
+            palette: {
+                themePrimary: "#1b79b0",
+                themeLighterAlt: "#f3f9fc",
+                themeLighter: "#d1e6f2",
+                themeLight: "#acd2e7",
+                themeTertiary: "#66a9d0",
+                themeSecondary: "#2f87b9",
+                themeDarkAlt: "#186d9e",
+                themeDark: "#145c86",
+                themeDarker: "#0f4463",
+                neutralLighterAlt: "#faf9f8",
+                neutralLighter: "#f3f2f1",
+                neutralLight: "#edebe9",
+                neutralQuaternaryAlt: "#e1dfdd",
+                neutralQuaternary: "#d0d0d0",
+                neutralTertiaryAlt: "#c8c6c4",
+                neutralTertiary: "#a19f9d",
+                neutralSecondary: "#605e5c",
+                neutralPrimaryAlt: "#3b3a39",
+                neutralPrimary: "#323130",
+                neutralDark: "#201f1e",
+                black: "#000000",
+                white: "#ffffff"
+            },
+            borders: {
+                input:{
+                    style: "Solid",
+                    thickness: 1,
+                    focusedThickness: 1,
+                    radius: 0
+                },
+                button:{
+                    style: "Solid",
+                    thickness: 0,
+                    focusedThickness: 0,
+                    radius: 0
+                }
+            },
+            fonts: {
+                default: "'Segoe UI', 'Open Sans', sans-serif",
+                size: {
+                    xs: 9,
+                    s: 10.5,
+                    m: 12,
+                    l: 16,
+                    xl: 20
+                },
+                headings: {
+                    h1: 24,
+                    h2: 20,
+                    h3: 14,
+                    h4: 12
+                }
+            }
+        }
+    Value: =40
+    Width: =320
+    X: =0
+    Y: =0
+    ZIndex: =7
+
+    shp_Progress_Active As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =If(IsBlank(Progress.Color),ColorValue(Progress.Theme.palette.themePrimary),Progress.Color)
+        Height: =Parent.Height
+        Width: =(Progress.Value*Progress.Width)/100
+        ZIndex: =1
+

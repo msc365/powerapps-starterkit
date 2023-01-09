@@ -1,0 +1,334 @@
+Header As CanvasComponent:
+    BackButtonImage: |-
+        ="data:image/svg+xml," & 
+         EncodeUrl(
+            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2048 2048'>
+            <g transform='matrix(1 0 0 -1 0 2048),rotate(0, 2048,1024)'>
+                <path 
+                    fill='" & Header.Theme.palette.white& "'
+                    d='M2048 960h-1798l787 -787l-90 -90l-941 941l941 941l90 -90l-787 -787h1798v-128z' />
+            </g>
+            </svg>"
+        )
+    BackButtonText: ="BACK"
+    BackButtonVisible: =false
+    Background: =
+    Color: =
+    Fill: =RGBA(0, 0, 0, 0)
+    HasShadow: =true
+    Height: =If(Self.HasShadow,72,52)
+    LeftButtonImage: |-
+        ="data:image/svg+xml," & 
+         EncodeUrl(
+            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2048 2048'>
+                <path 
+                    fill='" & Header.Theme.palette.white & "'
+                    d='M1024 165l941 942-90 90-83-82v805h-640v-640H896v640H256v-805l-83 82-90-90 941-942zm640 1627V987l-640-640-640 640v805h384v-640h512v640h384z' />
+            </svg>"
+        )
+    LeftButtonVisible: =true
+    OnSelectBackButton: =true
+    OnSelectLeftButton: =true
+    OnSelectRightButton: =true
+    RightButtonImage: |-
+        ="data:image/svg+xml," & 
+         EncodeUrl(
+            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2048 2048'>
+                <path 
+                    fill='" & Header.Theme.palette.white & "'
+                    d='M1783 1060q0 -9 0.5 -18t0.5 -18t-0.5 -18t-0.5 -18l259 -161l-159 -383l-297 68q-24 -26 -50 -50l68 -297l-383 -159l-161 259q-9 0 -18 -0.5t-18 -0.5t-18 0.5t-18 0.5l-161 -259l-383 159l68 297q-26 24 -50 50l-297 -68l-159 383l259 161q0 9 -0.5 18t-0.5 18t0.5 18t0.5 18l-259 161l159 383l297 -68q24 26 50 50l-68 297l383 159l161 -259q9 0 18 0.5t18 0.5t18 -0.5t18 -0.5l161 259l383 -159l-68 -297q26 -24 50 -50l297 68l159 -383zM1666 930q2 24 4 47.5t2 47.5q0 23 -2 47t-4 47l236 147l-86 208l-271 -63q-31 38 -63.5 70t-70.5 64l63 271l-208 86l-148 -236q-23 2 -47 4t-47 2q-24 0 -47.5 -2t-47.5 -4l-147 236l-208 -86l63 -271q-38 -31 -70 -63.5t-64 -70.5l-271 63l-86 -208l236 -148q-2 -24 -4 -47.5t-2 -47.5q0 -23 2 -47t4 -47l-236 -147l86 -208l271 63q31 -38 63.5 -70t70.5 -64l-63 -271l208 -86l148 236q23 -2 47 -4t47 -2q24 0 47.5 2t47.5 4l147 -236l208 86l-63 271q38 31 70 63.5t64 70.5l271 -63l86 208zM1024 1400q78 0 146.5 -29.5t119.5 -80.5t80.5 -119.5t29.5 -146.5t-29.5 -146.5t-80.5 -119.5t-119.5 -80.5t-146.5 -29.5t-146.5 29.5t-119.5 80.5t-80.5 119.5t-29.5 146.5t29.5 146.5t80.5 119.5t119.5 80.5t146.5 29.5zM1024 760q55 0 103 20.5t84 56.5t56.5 84t20.5 103t-20.5 103t-56.5 84t-84 56.5t-103 20.5t-103 -20.5t-84 -56.5t-56.5 -84t-20.5 -103t20.5 -103t56.5 -84t84 -56.5t103 -20.5z' />
+            </svg>"
+        )
+    RightButtonVisible: =true
+    Theme: |-
+        ={
+            palette: {
+                themePrimary: "#1b79b0",
+                themeLighterAlt: "#f3f9fc",
+                themeLighter: "#d1e6f2",
+                themeLight: "#acd2e7",
+                themeTertiary: "#66a9d0",
+                themeSecondary: "#2f87b9",
+                themeDarkAlt: "#186d9e",
+                themeDark: "#145c86",
+                themeDarker: "#0f4463",
+                neutralLighterAlt: "#faf9f8",
+                neutralLighter: "#f3f2f1",
+                neutralLight: "#edebe9",
+                neutralQuaternaryAlt: "#e1dfdd",
+                neutralQuaternary: "#d0d0d0",
+                neutralTertiaryAlt: "#c8c6c4",
+                neutralTertiary: "#a19f9d",
+                neutralSecondary: "#605e5c",
+                neutralPrimaryAlt: "#3b3a39",
+                neutralPrimary: "#323130",
+                neutralDark: "#201f1e",
+                black: "#000000",
+                white: "#ffffff"
+            },
+            borders: {
+                input:{
+                    style: "Solid",
+                    thickness: 1,
+                    focusedThickness: 1,
+                    radius: 0
+                },
+                button:{
+                    style: "Solid",
+                    thickness: 0,
+                    focusedThickness: 0,
+                    radius: 0
+                }
+            },
+            fonts: {
+                default: "'Segoe UI', 'Open Sans', sans-serif",
+                size: {
+                    xs: 9,
+                    s: 10.5,
+                    m: 12,
+                    l: 16,
+                    xl: 20
+                },
+                headings: {
+                    h1: 24,
+                    h2: 20,
+                    h3: 14,
+                    h4: 12
+                }
+            }
+        }
+    Title: ="TITLE GOES HERE"
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =8
+
+    htm_Header_Shadow As htmlViewer:
+        Font: =Font.'Segoe UI'
+        Height: =72
+        HtmlText: |-
+            ="<div style='
+                transform: translate(-50%, -70%);
+                position:absolute;
+                top:50%;
+                left:50%;
+                margin:auto;
+                box-shadow:rgba(0, 0, 0, 0.22) 0px 0.6px 7.6px 0px, rgba(0, 0, 0, 0.18) 0px 4.8px 14.4px 0px;
+                border-radius:0px;
+                padding:0;
+                background:none;
+                width:"& Header.Width &"px;
+                height:"& If(Header.HasShadow,con_Header_Root.Height,con_Header_Root.Height-20) &"px'>
+            </div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =10.5
+        Width: =Parent.Width
+        ZIndex: =1
+
+    con_Header_Root As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =If(IsBlank(Header.Background),ColorValue(Header.Theme.palette.themePrimary),Header.Background)
+        Height: =If(Header.HasShadow, Parent.Height-20, Parent.Height)
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =2
+
+        con_Header_Left As groupContainer.horizontalAutoLayoutContainer:
+            Height: =con_Header_Root.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =Parent.Height
+            LayoutMinWidth: =100
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =16
+            ZIndex: =1
+
+            con_HeaderIcon_Back As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =24
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                Visible: =Header.BackButtonVisible
+                Width: =img_Header_Back.Width+lbl_Header_Back.Width+4
+                ZIndex: =1
+
+                lbl_Header_Back As Label:
+                    Alignment: =Align.Justify
+                    Color: =If(IsBlank(Header.Color),ColorValue(Header.Theme.palette.white),Header.Color)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Header.Theme.fonts.default
+                    FontSize: =Header.Theme.fonts.size.s
+                    Height: =24
+                    OnSelect: =Header.OnSelectBackButton()
+                    PaddingStart: =8   
+                    Text: =Header.BackButtonText
+                    Visible: =true
+                    Width: =52
+                    X: =img_Header_Back.X+img_Header_Back.Width
+                    Y: =0
+                    ZIndex: =1
+
+                img_Header_Back As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.Solid
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Height: =24
+                    Image: =Header.BackButtonImage
+                    OnSelect: =Header.OnSelectBackButton()
+                    Width: =24
+                    ZIndex: =2
+
+                btn_Header_Back As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.Solid
+                    BorderThickness: =0
+                    Color: =RGBA(0, 0, 0, 0)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =0
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =24
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: =Header.OnSelectBackButton()
+                    PressedColor: =Self.Fill
+                    PressedFill: =Self.Color
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =10.5
+                    Text: =""
+                    Width: =Parent.Width
+                    ZIndex: =3
+
+            con_HeaderIcon_Left As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =24
+                LayoutMinHeight: =Parent.Height
+                LayoutMinWidth: =250
+                Visible: =Header.LeftButtonVisible && !Header.BackButtonVisible
+                Width: =24
+                ZIndex: =3
+
+                img_Header_Left As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.Solid
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Height: =24
+                    Image: =Header.LeftButtonImage
+                    OnSelect: =Header.OnSelectLeftButton()
+                    Width: =24
+                    ZIndex: =1
+
+                btn_Header_Left As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.Solid
+                    BorderThickness: =0
+                    Color: =RGBA(0, 0, 0, 0)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =0
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =24
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: =Header.OnSelectLeftButton()
+                    PressedColor: =Self.Fill
+                    PressedFill: =Self.Color
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =10.5
+                    Text: =""
+                    Width: =24
+                    ZIndex: =2
+
+        lbl_Header_Title As Label:
+            Alignment: =Align.Center
+            Color: =If(IsBlank(Header.Color),ColorValue(Header.Theme.palette.white),Header.Color)
+            DisplayMode: =DisplayMode.Edit
+            Font: =Header.Theme.fonts.default
+            FontSize: =Header.Theme.fonts.size.l
+            Height: =con_Header_Root.Height
+            LayoutMinHeight: =32
+            LayoutMinWidth: =320
+            Text: =Header.Title
+            Width: =320
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        con_Header_Right As groupContainer.horizontalAutoLayoutContainer:
+            Height: =con_Header_Root.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMinHeight: =Parent.Height
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =16
+            ZIndex: =3
+
+            con_Icon_Right As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =24
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                Visible: =Header.RightButtonVisible
+                Width: =24
+                ZIndex: =2
+
+                img_Header_Right As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.Solid
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Height: =24
+                    Image: =Header.RightButtonImage
+                    OnSelect: =Header.OnSelectRightButton()
+                    Width: =24
+                    ZIndex: =1
+
+                btn_Header_Right As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.Solid
+                    BorderThickness: =0
+                    Color: =RGBA(0, 0, 0, 0)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =0
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =24
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: =Header.OnSelectRightButton()
+                    PressedColor: =Self.Fill
+                    PressedFill: =Self.Color
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =10.5
+                    Text: =""
+                    Width: =24
+                    ZIndex: =2
+

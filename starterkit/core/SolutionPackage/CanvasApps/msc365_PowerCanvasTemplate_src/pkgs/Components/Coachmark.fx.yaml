@@ -1,0 +1,232 @@
+Coachmark As CanvasComponent:
+    BorderRadius: =2
+    Buttons: |-
+        =Table(
+            {
+                Label: "Show me how",
+                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Standard
+            },
+            {
+                Label: "Close",
+                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Primary
+            }
+        )
+    Fill: =RGBA(0, 0, 0, 0)
+    HasShadow: =false
+    Height: =240
+    Items: |-
+        =Table(
+            {Text: "1. Join an online class"},
+            {Text: "2. Turn in assignments"},
+            {Text: "3. Get the most out of remote learning"}
+        )
+    OnReset: =If(Coachmark.HasShadow,Set(boxMargin,10),Set(boxMargin,0));
+    OnSelectButton: =
+    Selected: |-
+        ={Label: gal_Coachmark_Buttons.Selected.Label}
+    Subtitle: |-
+        ="Learn how to:"
+    Theme: |-
+        ={
+            palette: {
+                themePrimary: "#1b79b0",
+                themeLighterAlt: "#f3f9fc",
+                themeLighter: "#d1e6f2",
+                themeLight: "#acd2e7",
+                themeTertiary: "#66a9d0",
+                themeSecondary: "#2f87b9",
+                themeDarkAlt: "#186d9e",
+                themeDark: "#145c86",
+                themeDarker: "#0f4463",
+                neutralLighterAlt: "#faf9f8",
+                neutralLighter: "#f3f2f1",
+                neutralLight: "#edebe9",
+                neutralQuaternaryAlt: "#e1dfdd",
+                neutralQuaternary: "#d0d0d0",
+                neutralTertiaryAlt: "#c8c6c4",
+                neutralTertiary: "#a19f9d",
+                neutralSecondary: "#605e5c",
+                neutralPrimaryAlt: "#3b3a39",
+                neutralPrimary: "#323130",
+                neutralDark: "#201f1e",
+                black: "#000000",
+                white: "#ffffff"
+            },
+            borders: {
+                input:{
+                    style: "Solid",
+                    thickness: 1,
+                    focusedThickness: 1,
+                    radius: 0
+                },
+                button:{
+                    style: "Solid",
+                    thickness: 0,
+                    focusedThickness: 0,
+                    radius: 0
+                }
+            },
+            fonts: {
+                default: "'Segoe UI', 'Open Sans', sans-serif",
+                size: {
+                    xs: 9,
+                    s: 10.5,
+                    m: 12,
+                    l: 16,
+                    xl: 20
+                },
+                headings: {
+                    h1: 24,
+                    h2: 20,
+                    h3: 14,
+                    h4: 12
+                }
+            }
+        }
+    Title: ="Not sure where to start?"
+    Width: =280
+    X: =0
+    Y: =0
+    ZIndex: =2
+
+    htm_Coachmark_Shadow As htmlViewer:
+        Font: =Font.'Segoe UI'
+        Height: =Parent.Height
+        HtmlText: |-
+            ="<div style='margin:"& If(Coachmark.HasShadow,10,0) &"px; 
+                width:"& Coachmark.Width-If(Coachmark.HasShadow,20,0) &"px; 
+                height:"& Coachmark.Height-If(Coachmark.HasShadow,21,1) &"px; 
+                background-color:"& Coachmark.Theme.palette.themePrimary &";"
+                & If(Coachmark.HasShadow,"box-shadow:0 2px 6px 1px rgba(0, 0, 0, 0.18);")& 
+                "border-radius:"& Coachmark.BorderRadius &"px>'
+            </div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+    con_Coachmark_Root As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height-If(Coachmark.HasShadow,20,0)
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width-If(Coachmark.HasShadow,20,0)
+        X: =If(Coachmark.HasShadow,10,0)
+        Y: =If(Coachmark.HasShadow,10,0)
+        ZIndex: =2
+
+        lbl_Coachmark_Title As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderStyle: =BorderStyle.Solid
+            Color: =ColorValue(Coachmark.Theme.palette.white)
+            DisabledBorderColor: =ColorValue(Coachmark.Theme.palette.neutralTertiary)
+            DisabledColor: =ColorValue(Coachmark.Theme.palette.neutralTertiary)
+            Font: =Coachmark.Theme.fonts.default
+            FontWeight: =FontWeight.Semibold
+            Height: =48
+            LayoutMinHeight: =70
+            LayoutMinWidth: =Parent.Width
+            PaddingBottom: =8
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Size: =Coachmark.Theme.fonts.headings.h3
+            Text: =Coachmark.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.Width
+            ZIndex: =1
+
+        lbl_Coachmark_Subtitle As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            BorderStyle: =BorderStyle.Solid
+            Color: =ColorValue(Coachmark.Theme.palette.themeLighter)
+            DisabledBorderColor: =ColorValue(Coachmark.Theme.palette.neutralTertiary)
+            DisabledColor: =ColorValue(Coachmark.Theme.palette.neutralTertiary)
+            Font: =Coachmark.Theme.fonts.default
+            Height: =28
+            LayoutMinHeight: =70
+            LayoutMinWidth: =Parent.Width
+            PaddingBottom: =0
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =0
+            Size: =Coachmark.Theme.fonts.size.s
+            Text: =Coachmark.Subtitle
+            Width: =Parent.Width
+            ZIndex: =2
+
+        gal_Coachmark_Items As gallery.galleryVertical:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =Parent.Height-lbl_Coachmark_Title.Height-lbl_Coachmark_Subtitle.Height
+            Items: =Coachmark.Items
+            Layout: =Layout.Vertical
+            LayoutMinWidth: =Parent.Width
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =lbl_Coachmark_Item.Height
+            Width: =Parent.Width
+            ZIndex: =3
+
+            lbl_Coachmark_Item As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 18, 107, 1)
+                BorderStyle: =BorderStyle.Solid
+                Color: =ColorValue(Coachmark.Theme.palette.themeLighter)
+                DisabledBorderColor: =ColorValue(Coachmark.Theme.palette.neutralTertiary)
+                DisabledColor: =ColorValue(Coachmark.Theme.palette.neutralTertiary)
+                Font: =Coachmark.Theme.fonts.default
+                Height: =20
+                PaddingBottom: =0
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =0
+                Size: =Coachmark.Theme.fonts.size.s
+                Text: =ThisItem.Text
+                Width: =Parent.Width
+                ZIndex: =1
+
+        gal_Coachmark_Buttons As gallery.galleryVertical:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =RGBA(0, 18, 107, 1)
+            FillPortions: =0
+            Height: =92
+            Items: =Coachmark.Buttons
+            Layout: =Layout.Vertical
+            LayoutMinHeight: =40
+            LayoutMinWidth: =Parent.Width
+            OnSelect: =Coachmark.OnSelectButton()
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =40
+            Width: =Parent.Width
+            ZIndex: =4
+
+            btn_Coachmark_Action As Button:
+                BorderColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white))
+                BorderRadius: =Coachmark.Theme.borders.button.radius
+                BorderStyle: =If(ThisItem.ButtonType = Primary, Solid, None)
+                BorderThickness: =1
+                ButtonType: =ThisItem.ButtonType
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.themePrimary),ColorValue(Coachmark.Theme.palette.white))
+                Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                FontWeight: =FontWeight.Normal
+                Height: =32
+                HoverBorderColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white))
+                HoverFillColor: =If(ThisItem.ButtonType = Primary, ColorFade(ColorValue(Coachmark.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Coachmark.Theme.palette.white),-5%))
+                HoverTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
+                OnSelect: =Select(Parent)
+                PaddingTop: =0.00
+                PressedBorderColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white))
+                PressedFillColor: =If(ThisItem.ButtonType = Primary,ColorValue(Coachmark.Theme.palette.themeDarkAlt),ColorValue(Coachmark.Theme.palette.neutralLight))
+                PressedTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
+                Text: =ThisItem.Label
+                TextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
+                Width: =Parent.Width-32
+                X: =(Parent.Width-Self.Width)/2
+                Y: =6
+                ZIndex: =1
+

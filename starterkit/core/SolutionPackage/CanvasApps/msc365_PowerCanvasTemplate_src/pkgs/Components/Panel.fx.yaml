@@ -1,0 +1,309 @@
+Panel As CanvasComponent:
+    Buttons: |-
+        =Table(
+            {
+                Label: "Cacnel",
+                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Standard
+            },
+            {
+                Label: "OK",
+                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Primary
+            }
+        )
+    ContentHeight: =con_Panel_Content.Height
+    ContentWidth: =con_Panel_Content.Width
+    ContentX: =con_Panel_Middle.X + con_Panel_Content.X
+    ContentY: =con_Panel_Content.Y
+    Fill: =Panel.OverlayColor
+    Height: =768
+    OnSelectButton: =
+    OnSelectClose: =true
+    OverlayColor: =RGBA(0, 0, 0, 0.2)
+    PanelPosition: ="Right"
+    PanelWidth: =400
+    Selected: |-
+        ={Label: gal_Panel_Buttons.Selected.Label}
+    Subtitle: ="Content goes here."
+    Theme: |-
+        ={
+            palette: {
+                themePrimary: "#1b79b0",
+                themeLighterAlt: "#f3f9fc",
+                themeLighter: "#d1e6f2",
+                themeLight: "#acd2e7",
+                themeTertiary: "#66a9d0",
+                themeSecondary: "#2f87b9",
+                themeDarkAlt: "#186d9e",
+                themeDark: "#145c86",
+                themeDarker: "#0f4463",
+                neutralLighterAlt: "#faf9f8",
+                neutralLighter: "#f3f2f1",
+                neutralLight: "#edebe9",
+                neutralQuaternaryAlt: "#e1dfdd",
+                neutralQuaternary: "#d0d0d0",
+                neutralTertiaryAlt: "#c8c6c4",
+                neutralTertiary: "#a19f9d",
+                neutralSecondary: "#605e5c",
+                neutralPrimaryAlt: "#3b3a39",
+                neutralPrimary: "#323130",
+                neutralDark: "#201f1e",
+                black: "#000000",
+                white: "#ffffff"
+            },
+            borders: {
+                input:{
+                    style: "Solid",
+                    thickness: 1,
+                    focusedThickness: 1,
+                    radius: 0
+                },
+                button:{
+                    style: "Solid",
+                    thickness: 0,
+                    focusedThickness: 0,
+                    radius: 0
+                }
+            },
+            fonts: {
+                default: "'Segoe UI', 'Open Sans', sans-serif",
+                size: {
+                    xs: 9,
+                    s: 10.5,
+                    m: 12,
+                    l: 16,
+                    xl: 20
+                },
+                headings: {
+                    h1: 24,
+                    h2: 20,
+                    h3: 14,
+                    h4: 12
+                }
+            }
+        }
+    Title: ="Title"
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    htm_Panel_Shadow As htmlViewer:
+        Font: =Font.'Segoe UI'
+        Height: =Panel.Height
+        HtmlText: |-
+            ="<div style=' transform: translate(-50%, -50%);
+                position:absolute;
+                top:" & Panel.Height / 2 & "px;
+                left:" & If(
+                Panel.PanelPosition = "Left", If(
+                    Panel.PanelWidth < 340,
+                    340,
+                    Panel.PanelWidth
+                ) / 2,
+                Panel.Width - (If(
+                    Panel.PanelWidth < 340,
+                    340,
+                    Panel.PanelWidth
+                )) / 2) & "px;
+                margin:auto;
+                box-shadow:rgba(0, 0, 0, 0.22) 0px 25.6px 57.6px 0px, rgba(0, 0, 0, 0.18) 0px 4.8px 14.4px 0px;
+                border-radius:2px;
+                padding:0;
+                background-color:" & Panel.Theme.palette.white & ";
+                width:" & If(
+                    Panel.PanelWidth < 340,
+                    340,
+                    Panel.PanelWidth
+                ) & "px;
+                height:" & Panel.Height & "px'>
+            </div>"
+        Size: =10.5
+        Width: =Panel.Width
+        ZIndex: =1
+
+    con_Panel_Root As groupContainer.horizontalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutMode: =LayoutMode.Auto
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        X: =0.00
+        ZIndex: =2
+
+        con_Panel_Left As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =If(IsBlank(Panel.OverlayColor),0,Parent.Height)
+            LayoutMinHeight: =Panel.Height
+            LayoutMinWidth: =250
+            Width: =If(Panel.PanelPosition="Left",0,Panel.Width-Panel.PanelWidth)
+            ZIndex: =1
+
+        con_Panel_Middle As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =8
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =8
+            Width: =Panel.PanelWidth
+            X: =32
+            Y: =32
+            ZIndex: =2
+
+            con_Panel_Header As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =64
+                LayoutMode: =LayoutMode.Auto
+                PaddingRight: =16
+                Width: =If(Panel.PanelWidth<340,340,Panel.PanelWidth)-16
+                ZIndex: =1
+
+                lbl_Panel_Title As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =ColorValue(Panel.Theme.palette.neutralPrimary)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =ColorValue(Panel.Theme.palette.neutralTertiary)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Panel.Theme.fonts.default
+                    FontWeight: =FontWeight.Semibold
+                    Height: =64
+                    LayoutMinHeight: =40
+                    LayoutMinWidth: =100
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0.00
+                    PaddingTop: =24
+                    Size: =Panel.Theme.fonts.size.l
+                    Text: =Panel.Title
+                    Width: =0.00
+                    X: =0.00
+                    ZIndex: =1
+
+                ico_Panel_Cancel As icon.Cancel:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderStyle: =Panel.Theme.borders.input.style
+                    Color: =ColorValue(Panel.Theme.palette.neutralPrimary)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(220, 220, 220, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =32
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(Self.Color, 30%)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Cancel
+                    LayoutMinHeight: =64
+                    LayoutMinWidth: =64
+                    OnSelect: =Panel.OnSelectClose()
+                    PaddingBottom: =8
+                    PaddingLeft: =8
+                    PaddingRight: =8
+                    PaddingTop: =8
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =32
+                    X: =0.00
+                    ZIndex: =2
+
+            lbl_Panel_Subtitle As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =ColorValue(Panel.Theme.palette.neutralPrimary)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =ColorValue(Panel.Theme.palette.neutralTertiary)
+                FocusedBorderThickness: =1
+                Font: =Panel.Theme.fonts.default
+                Height: =Parent.Height
+                LayoutMinWidth: =32
+                PaddingBottom: =8
+                PaddingLeft: =0
+                PaddingRight: =16
+                PaddingTop: =0
+                Size: =Panel.Theme.fonts.size.s
+                Text: =Panel.Subtitle
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.Width-16
+                ZIndex: =2
+
+            con_Panel_Content As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =Parent.Height
+                LayoutMinWidth: =320
+                Width: =Panel.PanelWidth-32
+                ZIndex: =3
+
+            shp_Panel_Divider As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =ColorValue(Panel.Theme.palette.themePrimary)
+                FocusedBorderThickness: =1
+                Height: =1
+                LayoutMinHeight: =1
+                Width: =Parent.Width-32
+                ZIndex: =4
+
+            con_Panel_Placeholder As groupContainer.manualLayoutContainer:
+                FillPortions: =0
+                Height: =2
+                LayoutMinHeight: =2
+                LayoutMinWidth: =250
+                ZIndex: =5
+
+            gal_Panel_Buttons As gallery.galleryHorizontal:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(166, 166, 166, 1)
+                FillPortions: =0
+                Height: =40
+                Items: =Panel.Buttons
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                OnSelect: =Panel.OnSelectButton()
+                ShowScrollbar: =false
+                TemplatePadding: =4
+                TemplateSize: =96
+                Width: =CountRows(gal_Panel_Buttons.AllItems)*164
+                X: =18
+                ZIndex: =6
+
+                btn_Panel_Action As Button:
+                    BorderRadius: =0
+                    ButtonType: =ThisItem.ButtonType
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.themePrimary),ColorValue(Panel.Theme.palette.white))
+                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                    Height: =32
+                    HoverFillColor: =If(ThisItem.ButtonType = Primary, ColorFade(ColorValue(Panel.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Panel.Theme.palette.white),-5%))
+                    HoverTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =0.00
+                    PressedFillColor: =If(ThisItem.ButtonType = Primary,ColorValue(Panel.Theme.palette.themeDarkAlt),ColorValue(Panel.Theme.palette.neutralLight))
+                    PressedTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
+                    Text: =ThisItem.Label
+                    TextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
+                    Width: =88
+                    X: =0.00
+                    Y: =0
+                    ZIndex: =1
+
+        con_Panel_Right As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: =Panel.Height
+            LayoutMinHeight: =Panel.Height
+            LayoutMinWidth: =If(Panel.PanelPosition="Left",Panel.Width-If(Panel.PanelWidth<340,340,Panel.PanelWidth),0)
+            Width: =If(Panel.PanelPosition="Left",Panel.Width-Panel.PanelWidth,0)
+            ZIndex: =3
+

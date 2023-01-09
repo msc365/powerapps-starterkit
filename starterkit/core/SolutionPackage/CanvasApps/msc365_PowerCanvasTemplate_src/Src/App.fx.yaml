@@ -1,0 +1,140 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =/* Published version */
+        Set(
+            Version,
+            "v1.0.220714.0"
+        );
+        Set(
+            Author,
+            "Provided by MSCollab365"
+        );
+        /* Set debugMode */
+        Switch(
+            Param("debug"),
+            "1",
+            Set(
+                debugMode,
+                true
+            ),
+            Set(
+                debugMode,
+                false
+            )
+        );
+        /* Set darkMode */
+        Switch(
+            Param("theme"),
+            "dark",
+            Set(
+                darkMode,
+                true
+            ),
+            Set(
+                darkMode,
+                false
+            )
+        );
+        Set(
+            themePalette,
+            If(
+                !darkMode,
+                {
+                    themePrimary: "#1b79b0",
+                    themeLighterAlt: "#f3f9fc",
+                    themeLighter: "#d1e6f2",
+                    themeLight: "#acd2e7",
+                    themeTertiary: "#66a9d0",
+                    themeSecondary: "#2f87b9",
+                    themeDarkAlt: "#186d9e",
+                    themeDark: "#145c86",
+                    themeDarker: "#0f4463",
+                    neutralLighterAlt: "#faf9f8",
+                    neutralLighter: "#f3f2f1",
+                    neutralLight: "#edebe9",
+                    neutralQuaternaryAlt: "#e1dfdd",
+                    neutralQuaternary: "#d0d0d0",
+                    neutralTertiaryAlt: "#c8c6c4",
+                    neutralTertiary: "#a19f9d",
+                    neutralSecondary: "#605e5c",
+                    neutralPrimaryAlt: "#3b3a39",
+                    neutralPrimary: "#323130",
+                    neutralDark: "#201f1e",
+                    black: "#000000",
+                    white: "#ffffff",
+                    /* DON'T REPLACE ACCENT COLORS WHEN 
+                        PASTING NEW PALETTE COLORS */
+                    accentPrimary: "#ee5209",
+                    accentSecondary: "#f49468",
+                    accentTertiary: "#fac9b2"
+                },
+                {
+                    themePrimary: "#23a1eb",
+                    themeLighterAlt: "#010609",
+                    themeLighter: "#061a26",
+                    themeLight: "#0b3046",
+                    themeTertiary: "#15618d",
+                    themeSecondary: "#1f8ece",
+                    themeDarkAlt: "#38aaed",
+                    themeDark: "#55b7ef",
+                    themeDarker: "#80c9f4",
+                    neutralLighterAlt: "#393a3c",
+                    neutralLighter: "#414244",
+                    neutralLight: "#4d4f51",
+                    neutralQuaternaryAlt: "#555759",
+                    neutralQuaternary: "#5b5d5f",
+                    neutralTertiaryAlt: "#76787a",
+                    neutralTertiary: "#c8c8c8",
+                    neutralSecondary: "#d0d0d0",
+                    neutralPrimaryAlt: "#dadada",
+                    neutralPrimary: "#ffffff",
+                    neutralDark: "#f4f4f4",
+                    black: "#f8f8f8",
+                    white: "#303233",
+                    /* DON'T REPLACE ACCENT COLORS WHEN 
+                        PASTING NEW PALETTE COLORS */
+                    accentPrimary: "#ff6b26",
+                    accentSecondary: "#994017",
+                    accentTertiary: "#4d200b"
+                }
+            )
+        );
+        Set(
+            appTheme,
+            {
+                palette: themePalette,
+                borders: {
+                    input: {
+                        style: "Solid",
+                        thickness: 1,
+                        focusedThickness: 1,
+                        radius: 0
+                    },
+                    button: {
+                        style: "Solid",
+                        thickness: 0,
+                        focusedThickness: 0,
+                        radius: 0
+                    }
+                },
+                fonts: {
+                    default: "'Segoe UI', 'Open Sans', sans-serif",
+                    size: {
+                        xs: 9,
+                        s: 10.5,
+                        m: 12,
+                        l: 16,
+                        xl: 20
+                    },
+                    headings: {
+                        h1: 24,
+                        h2: 20,
+                        h3: 14,
+                        h4: 12
+                    }
+                }
+            }
+        )
+    StartScreen: ='Load Screen'
+
