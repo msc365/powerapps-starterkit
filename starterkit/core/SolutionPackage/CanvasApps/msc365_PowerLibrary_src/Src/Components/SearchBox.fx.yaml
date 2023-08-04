@@ -61,6 +61,7 @@ SearchBox As CanvasComponent:
                 }
             }
         }
+    Version: ="230804.0"
     Width: =242
     X: =0
     Y: =0

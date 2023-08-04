@@ -11,11 +11,13 @@ IconSVG As CanvasComponent:
                     "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 " & 2048 & " 2048'>
                         <g transform='matrix(1 0 0 -1 0 2048),rotate(0, 2048,1024)'>
                             <path 
-                                fill='" & If(IsBlank(ColorHex),IconSVG.Theme.palette.themePrimary, ColorHex) & "'
+                                fill='" & ColorHex & "'
                                 d='" & IconSVG.GetIconPath(IconName) & "' />
                         </g>
                     </svg>"
                 )
+                
+                // If(IsBlank(ColorHex), IconSVG.Theme.palette.themePrimary, ColorHex)
     GetIconPath(IconName As String):
         IconName:
             Default: ="Text"
@@ -11296,7 +11298,8 @@ IconSVG As CanvasComponent:
                         }
                     )
                 , Name=IconName).Path
-    ColorHex: =
+    ColorHex: |-
+        ="#f0f0f0"
     Fill: =RGBA(0, 0, 0, 0)
     Height: =40
     Name: ="PowerAppsLogo"
@@ -11359,6 +11362,7 @@ IconSVG As CanvasComponent:
                 }
             }
         }
+    Version: ="230804.0"
     Width: =40
     X: =0
     Y: =0

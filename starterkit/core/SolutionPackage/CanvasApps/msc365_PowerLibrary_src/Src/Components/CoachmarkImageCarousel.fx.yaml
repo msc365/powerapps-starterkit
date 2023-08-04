@@ -98,6 +98,7 @@ CoachmarkImageCarousel As CanvasComponent:
                 }
             }
         }
+    Version: ="230804.0"
     Width: =280
     X: =0
     Y: =0
@@ -107,7 +108,7 @@ CoachmarkImageCarousel As CanvasComponent:
         Font: =Font.'Segoe UI'
         Height: =Parent.Height
         HtmlText: |-
-            ="<div style='margin:"& If(CoachmarkImageCarousel.HasShadow,10,0) &"px; 
+            ="<div style='margin:"& If(CoachmarkImageCarousel.HasShadow,boxMargin,0) &"px; 
                 width:"& CoachmarkImageCarousel.Width-If(CoachmarkImageCarousel.HasShadow,20,0) &"px; 
                 height:"& CoachmarkImageCarousel.Height-If(CoachmarkImageCarousel.HasShadow,21,1) &"px; 
                 background-color:"& CoachmarkImageCarousel.Theme.palette.themePrimary &"; 

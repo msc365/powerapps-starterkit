@@ -60,6 +60,7 @@ Progress As CanvasComponent:
             }
         }
     Value: =40
+    Version: ="230804.0"
     Width: =320
     X: =0
     Y: =0

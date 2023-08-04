@@ -1,0 +1,48 @@
+"'Start Screen' As screen":
+
+    conMain As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =4
+
+        lblTitle As label:
+            Align: =Align.Center
+            Color: =ColorValue(appTheme.palette.themePrimary)
+            FontWeight: =FontWeight.Bold
+            Height: =80
+            LayoutMinHeight: =40
+            LayoutMinWidth: =150
+            Size: =appTheme.fonts.size.xl
+            Text: ="Start building Awesome Looking Biz Apps!"
+            Width: =600
+            X: =424
+            Y: =284
+            ZIndex: =1
+
+        lblAppProvider As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            LayoutMinHeight: =40
+            LayoutMinWidth: =150
+            Size: =appTheme.fonts.size.m
+            Text: =glbAppProvider
+            Width: =480
+            X: =424
+            Y: =58
+            ZIndex: =2
+
+        lblAppVersion As label:
+            Align: =Align.Center
+            Height: =24
+            LayoutMinHeight: =40
+            LayoutMinWidth: =150
+            Text: =glbAppVersion
+            Width: =480
+            X: =424
+            Y: =90
+            ZIndex: =3
+

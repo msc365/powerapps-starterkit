@@ -1,0 +1,22 @@
+LibraryVersion As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 1)
+    Height: =40
+    Version: ="230804.0"
+    Width: =120
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    lbl_Version As Label:
+        Alignment: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =12
+        FontWeight: =FontWeight.Semibold
+        Height: =LibraryVersion.Height
+        Text: =LibraryVersion.Version
+        Width: =LibraryVersion.Width
+        X: =0
+        Y: =0
+        ZIndex: =1
+

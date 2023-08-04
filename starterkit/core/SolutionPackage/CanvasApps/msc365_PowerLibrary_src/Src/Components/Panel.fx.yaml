@@ -2,12 +2,12 @@ Panel As CanvasComponent:
     Buttons: |-
         =Table(
             {
-                Label: "Cacnel",
-                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Standard
+                Label: "Cancel",
+                ButtonType: 'Button.ButtonType'.Standard
             },
             {
                 Label: "OK",
-                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Primary
+                ButtonType: 'Button.ButtonType'.Primary
             }
         )
     ContentHeight: =con_Panel_Content.Height
@@ -82,6 +82,7 @@ Panel As CanvasComponent:
             }
         }
     Title: ="Title"
+    Version: ="230804.0"
     Width: =1366
     X: =0
     Y: =0
@@ -281,17 +282,17 @@ Panel As CanvasComponent:
                     BorderRadius: =0
                     ButtonType: =ThisItem.ButtonType
                     DisplayMode: =DisplayMode.Edit
-                    FillColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.themePrimary),ColorValue(Panel.Theme.palette.white))
+                    FillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Panel.Theme.palette.themePrimary),ColorValue(Panel.Theme.palette.white))
                     Font: ="'Segoe UI', 'Open Sans', sans-serif"
                     Height: =32
-                    HoverFillColor: =If(ThisItem.ButtonType = Primary, ColorFade(ColorValue(Panel.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Panel.Theme.palette.white),-5%))
-                    HoverTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
+                    HoverFillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorFade(ColorValue(Panel.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Panel.Theme.palette.white),-5%))
+                    HoverTextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
                     OnSelect: =Select(Parent)
                     PaddingTop: =0.00
-                    PressedFillColor: =If(ThisItem.ButtonType = Primary,ColorValue(Panel.Theme.palette.themeDarkAlt),ColorValue(Panel.Theme.palette.neutralLight))
-                    PressedTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
+                    PressedFillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary,ColorValue(Panel.Theme.palette.themeDarkAlt),ColorValue(Panel.Theme.palette.neutralLight))
+                    PressedTextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
                     Text: =ThisItem.Label
-                    TextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
+                    TextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Panel.Theme.palette.white),ColorValue(Panel.Theme.palette.neutralPrimary))
                     Width: =88
                     X: =0.00
                     Y: =0

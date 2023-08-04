@@ -3,11 +3,11 @@ Dialog As CanvasComponent:
         =Table(
             {
                 Label: "Cancel",
-                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Standard
+                ButtonType: 'Button.ButtonType'.Standard
             },
                 {
                 Label: "OK",
-                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Primary
+                ButtonType: 'Button.ButtonType'.Primary
             }
         )
     ContentHeight: =Dialog.DialogHeight-con_Dialog_Center.PaddingTop-con_Dialog_Center.PaddingBottom-con_Dialog_Header.Height-gal_Dialog_Buttons.Height
@@ -83,6 +83,7 @@ Dialog As CanvasComponent:
             }
         }
     Title: ="Title"
+    Version: ="230804.0"
     Width: =1366
     X: =0
     Y: =0
@@ -244,17 +245,17 @@ Dialog As CanvasComponent:
                         BorderRadius: =0
                         ButtonType: =ThisItem.ButtonType
                         DisplayMode: =DisplayMode.Edit
-                        FillColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.themePrimary),ColorValue(Dialog.Theme.palette.white))
+                        FillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Dialog.Theme.palette.themePrimary),ColorValue(Dialog.Theme.palette.white))
                         Font: ="'Segoe UI', 'Open Sans', sans-serif"
                         Height: =32
-                        HoverFillColor: =If(ThisItem.ButtonType = Primary, ColorFade(ColorValue(Dialog.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Dialog.Theme.palette.white),-5%))
-                        HoverTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
+                        HoverFillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorFade(ColorValue(Dialog.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Dialog.Theme.palette.white),-5%))
+                        HoverTextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
                         OnSelect: =Select(Parent)
                         PaddingTop: =0.00
-                        PressedFillColor: =If(ThisItem.ButtonType = Primary,ColorValue(Dialog.Theme.palette.themeDarkAlt),ColorValue(Dialog.Theme.palette.neutralLight))
-                        PressedTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
+                        PressedFillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary,ColorValue(Dialog.Theme.palette.themeDarkAlt),ColorValue(Dialog.Theme.palette.neutralLight))
+                        PressedTextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
                         Text: =ThisItem.Label
-                        TextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
+                        TextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Dialog.Theme.palette.white),ColorValue(Dialog.Theme.palette.neutralPrimary))
                         Width: =88
                         X: =0
                         Y: =0

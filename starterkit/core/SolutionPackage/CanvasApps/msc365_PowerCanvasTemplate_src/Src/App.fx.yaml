@@ -1,14 +1,14 @@
 App As appinfo:
     BackEnabled: =false
     OnStart: |-
-        =/* Published version */
+        =/* App info */
         Set(
-            Version,
-            "v1.0.230109.0-rc"
+            glbAppProvider,
+            "MSc365 BizApps by Martin Swinkels"
         );
         Set(
-            Author,
-            "Provided by MSCollab365, Martin Swinkels"
+            glbAppVersion,
+            "v230804.0"
         );
         /* Set debugMode */
         Switch(
@@ -136,5 +136,12 @@ App As appinfo:
                 }
             }
         )
-    StartScreen: ='Load Screen'
+    StartScreen: =
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
 

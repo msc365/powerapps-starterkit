@@ -75,6 +75,7 @@ Spinner As CanvasComponent:
                 }
             }
         }
+    Version: ="230804.0"
     Width: =500
     X: =0
     Y: =0

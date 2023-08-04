@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.22113.176" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.23071.162" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>msc365_PowerStarterKit</UniqueName>
     <LocalizedNames>
-      <LocalizedName description="MSC365 - Power Starter Kit" languagecode="1033" />
+      <LocalizedName description="MSc365 - Power Starter Kit" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.230109.0</Version>
+    <Version>230804.0</Version>
     <Managed>0</Managed>
     <Publisher>
-      <UniqueName>MSCollab365Labs</UniqueName>
+      <UniqueName>msc365</UniqueName>
       <LocalizedNames>
-        <LocalizedName description="MSCollab365 Labs" languagecode="1033" />
+        <LocalizedName description="MSc365 BizApps" languagecode="1033" />
       </LocalizedNames>
       <Descriptions>
-        <Description description="Publisher for MSCollab365 Labs on Microsoft Power Platform by Martin Swinkels" languagecode="1033" />
+        <Description description="Publisher for MSc365 BizApps on Microsoft Power Platform by Martin Swinkels" languagecode="1033" />
       </Descriptions>
       <EMailAddress xsi:nil="true"></EMailAddress>
       <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
       <CustomizationPrefix>msc365</CustomizationPrefix>
-      <CustomizationOptionValuePrefix>66173</CustomizationOptionValuePrefix>
+      <CustomizationOptionValuePrefix>18166</CustomizationOptionValuePrefix>
       <Addresses>
         <Address>
           <AddressNumber>1</AddressNumber>

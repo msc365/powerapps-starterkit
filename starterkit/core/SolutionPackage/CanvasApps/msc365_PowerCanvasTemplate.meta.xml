@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>msc365_PowerCanvasTemplate</Name>
-  <AppVersion>2023-01-09T08:51:58Z</AppVersion>
+  <AppVersion>2023-08-04T11:41:45Z</AppVersion>
   <Status>Ready</Status>
-  <CreatedByClientVersion>3.22122.15.0</CreatedByClientVersion>
-  <MinClientVersion>3.22122.15.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22122.15","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20220713T101441Z-3.22064.10.0"}</Tags>
+  <CreatedByClientVersion>3.23074.15.0</CreatedByClientVersion>
+  <MinClientVersion>3.23074.15.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.23074.15","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20230804T111156Z-3.23074.15.0","showStatusBar":"false"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(27, 121, 176, 1)</BackgroundColor>
-  <DisplayName>MSC365 - Canvas Template</DisplayName>
+  <DisplayName>MSc365 - Canvas Template</DisplayName>
   <Description xsi:nil="true"></Description>
-  <CommitMessage xsi:nil="true"></CommitMessage>
-  <Publisher></Publisher>
+  <CommitMessage>Release 230804.0</CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
   <ConnectionReferences>{}</ConnectionReferences>
   <DatabaseReferences>{}</DatabaseReferences>
   <AppComponents>[]</AppComponents>
-  <AppComponentDependencies>[{"appComponentName":"f88db16b54374f71bec399f8bede9e41","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"1eabf83952a04997b5631ae4f620c4df","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"82aca8fce9f04e4eb2858522aab43549","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"8a501f88ab8c447bae5dc1560a09faad","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"88cf808fd9eb44bbb3c117612f0a6fb8","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"65284a79f9a946cbb013edcd588596d9","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"78b84d3cfe1a471a8e99d6e87c78f5c9","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"74111e33ec27495e8af66872e8ee4dbd","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"1630d32a1c8e458d972313a6202495fd","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"0b52c38efee14d98b0c38b2b15157c60","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"},{"appComponentName":"950d82f51aca430eb2e7f9182c3c90d0","appName":"c9eb48d4-2ce3-44bd-bcb8-194080c635d5","appComponentLibraryName":"06c7c4f4-5c2d-4293-9b23-378db316170a","appComponentLibraryVersion":"2022-07-13T10:12:35Z","appComponentLibraryLogicalName":"msc365_powerlibrary","environmentName":"default-b41049fd-480b-446c-a330-14f006a18c15"}]</AppComponentDependencies>
+  <AppComponentDependencies>[]</AppComponentDependencies>
   <CanConsumeAppPass>1</CanConsumeAppPass>
   <CanvasAppType>0</CanvasAppType>
   <BypassConsent>0</BypassConsent>
   <AdminControlBypassConsent>0</AdminControlBypassConsent>
   <EmbeddedApp xsi:nil="true"></EmbeddedApp>
   <IntroducedVersion>1.0</IntroducedVersion>
-  <CdsDependencies>{"cdsdependencies":[{"logicalname":"msc365_powerlibrary","componenttype":300,"componenttypeplatformname":"CanvasApp"}]}</CdsDependencies>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
   <IsCustomizable>1</IsCustomizable>
   <BackgroundImageUri>/CanvasApps/msc365_PowerCanvasTemplate_BackgroundImageUri</BackgroundImageUri>
   <DocumentUri>/CanvasApps/msc365_PowerCanvasTemplate_DocumentUri.msapp</DocumentUri>

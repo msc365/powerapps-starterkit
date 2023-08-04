@@ -11285,7 +11285,7 @@ Menu As CanvasComponent:
     DefaultExpandValue: =true
     Fill: =RGBA(0, 0, 0, 0)
     HasShadow: =true
-    Height: =640
+    Height: =768
     IconColorHex: =
     IsExpanded: =isExpanded
     IsNavigable: =true
@@ -11360,6 +11360,7 @@ Menu As CanvasComponent:
                 }
             }
         }
+    Version: ="230804.0"
     Width: =If(!Self.IsExpanded,If(Self.HasShadow,58,48),If(Self.HasShadow,230,220))
     X: =0
     Y: =0
@@ -11397,7 +11398,7 @@ Menu As CanvasComponent:
             =If(!IsBlank(ThisItem.Screen) && Menu.IsNavigable, Navigate(ThisItem.Screen,ScreenTransition.Fade));
             Menu.OnSelectItem();
         ShowScrollbar: =false
-        TemplateFill: =/**/ If(ThisItem.Screen = App.ActiveScreen, If(IsBlank(Menu.SelectedColorHex),ColorValue(Menu.Theme.palette.themeLighterAlt),ColorValue(Menu.SelectedColorHex)), Transparent)
+        TemplateFill: =/**/ If(ThisItem.Screen = App.ActiveScreen, If(IsBlank(Menu.SelectedColorHex),ColorValue(Menu.Theme.palette.themeLighterAlt),ColorValue(Menu.SelectedColorHex)), Color.Transparent)
         TemplatePadding: =0
         TemplateSize: =40
         Width: =If(Menu.HasShadow,Menu.Width-10,Menu.Width)

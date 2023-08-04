@@ -4,11 +4,11 @@ Coachmark As CanvasComponent:
         =Table(
             {
                 Label: "Show me how",
-                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Standard
+                ButtonType: 'Button.ButtonType'.Standard
             },
             {
                 Label: "Close",
-                ButtonType: '''Microsoft.CoreControls.Button.ButtonType'''.Primary
+                ButtonType: 'Button.ButtonType'.Primary
             }
         )
     Fill: =RGBA(0, 0, 0, 0)
@@ -84,6 +84,7 @@ Coachmark As CanvasComponent:
             }
         }
     Title: ="Not sure where to start?"
+    Version: ="230804.0"
     Width: =280
     X: =0
     Y: =0
@@ -93,7 +94,7 @@ Coachmark As CanvasComponent:
         Font: =Font.'Segoe UI'
         Height: =Parent.Height
         HtmlText: |-
-            ="<div style='margin:"& If(Coachmark.HasShadow,10,0) &"px; 
+            ="<div style='margin:"& If(Coachmark.HasShadow,boxMargin,0) &"px; 
                 width:"& Coachmark.Width-If(Coachmark.HasShadow,20,0) &"px; 
                 height:"& Coachmark.Height-If(Coachmark.HasShadow,21,1) &"px; 
                 background-color:"& Coachmark.Theme.palette.themePrimary &";"
@@ -197,26 +198,26 @@ Coachmark As CanvasComponent:
             ZIndex: =4
 
             btn_Coachmark_Action As Button:
-                BorderColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white))
+                BorderColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Coachmark.Theme.palette.white))
                 BorderRadius: =Coachmark.Theme.borders.button.radius
-                BorderStyle: =If(ThisItem.ButtonType = Primary, Solid, None)
+                BorderStyle: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, BorderStyle.Solid, BorderStyle.None)
                 BorderThickness: =1
                 ButtonType: =ThisItem.ButtonType
                 DisplayMode: =DisplayMode.Edit
-                FillColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.themePrimary),ColorValue(Coachmark.Theme.palette.white))
+                FillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Coachmark.Theme.palette.themePrimary),ColorValue(Coachmark.Theme.palette.white))
                 Font: ="'Segoe UI', 'Open Sans', sans-serif"
                 FontWeight: =FontWeight.Normal
                 Height: =32
-                HoverBorderColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white))
-                HoverFillColor: =If(ThisItem.ButtonType = Primary, ColorFade(ColorValue(Coachmark.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Coachmark.Theme.palette.white),-5%))
-                HoverTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
+                HoverBorderColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Coachmark.Theme.palette.white))
+                HoverFillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorFade(ColorValue(Coachmark.Theme.palette.themePrimary),-5%),ColorFade(ColorValue(Coachmark.Theme.palette.white),-5%))
+                HoverTextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
                 OnSelect: =Select(Parent)
                 PaddingTop: =0.00
-                PressedBorderColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white))
-                PressedFillColor: =If(ThisItem.ButtonType = Primary,ColorValue(Coachmark.Theme.palette.themeDarkAlt),ColorValue(Coachmark.Theme.palette.neutralLight))
-                PressedTextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
+                PressedBorderColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Coachmark.Theme.palette.white))
+                PressedFillColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary,ColorValue(Coachmark.Theme.palette.themeDarkAlt),ColorValue(Coachmark.Theme.palette.neutralLight))
+                PressedTextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
                 Text: =ThisItem.Label
-                TextColor: =If(ThisItem.ButtonType = Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
+                TextColor: =If(ThisItem.ButtonType = 'Button.ButtonType'.Primary, ColorValue(Coachmark.Theme.palette.white),ColorValue(Coachmark.Theme.palette.neutralPrimary))
                 Width: =Parent.Width-32
                 X: =(Parent.Width-Self.Width)/2
                 Y: =6

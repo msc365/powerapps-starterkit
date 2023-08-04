@@ -90,6 +90,7 @@ CoachmarkCarousel As CanvasComponent:
                 }
             }
         }
+    Version: ="230804.0"
     Width: =280
     X: =0
     Y: =0
@@ -99,7 +100,7 @@ CoachmarkCarousel As CanvasComponent:
         Font: =Font.'Segoe UI'
         Height: =Parent.Height
         HtmlText: |-
-            ="<div style='margin:"& If(CoachmarkCarousel.HasShadow,10,0) &"px; 
+            ="<div style='margin:"& If(CoachmarkCarousel.HasShadow,boxMargin,0) &"px; 
                 width:"& CoachmarkCarousel.Width-If(CoachmarkCarousel.HasShadow,20,0) &"px; 
                 height:"& CoachmarkCarousel.Height-If(CoachmarkCarousel.HasShadow,21,1) &"px; 
                 background-color:"& CoachmarkCarousel.Theme.palette.themePrimary &"; 
